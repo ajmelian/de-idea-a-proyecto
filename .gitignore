@@ -1,0 +1,19 @@
+# Logs de ejecución de agentes y MCP
+logs/
+*.log
+
+# Paquetes distribuibles
+*.zip
+dist/
+
+# Entornos locales
+.opencode/
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Editores
+.idea/
+.vscode/
+*.swp
+*~
