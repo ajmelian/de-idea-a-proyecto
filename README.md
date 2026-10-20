@@ -1,6 +1,7 @@
 # De idea a proyecto
 
 [![skills.sh](https://skills.sh/b/ajmelian/de-idea-a-proyecto)](https://skills.sh/ajmelian/de-idea-a-proyecto)
+[![validate](https://github.com/ajmelian/de-idea-a-proyecto/actions/workflows/validate.yml/badge.svg)](https://github.com/ajmelian/de-idea-a-proyecto/actions/workflows/validate.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![OpenCode v2](https://img.shields.io/badge/OpenCode-v2-000000)](https://opencode.ai)
 [![OpenSpec](https://img.shields.io/badge/OpenSpec-SDD-4B5563)](https://github.com/Fission-AI/OpenSpec)
