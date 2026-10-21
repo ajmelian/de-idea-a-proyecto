@@ -1,4 +1,4 @@
-# De idea a proyecto
+# De idea a proyecto — OpenSpec, SDD & TDD for AI coding agents
 
 [![skills.sh](https://skills.sh/b/ajmelian/de-idea-a-proyecto)](https://skills.sh/ajmelian/de-idea-a-proyecto)
 [![validate](https://github.com/ajmelian/de-idea-a-proyecto/actions/workflows/validate.yml/badge.svg)](https://github.com/ajmelian/de-idea-a-proyecto/actions/workflows/validate.yml)
@@ -6,28 +6,24 @@
 [![OpenCode v2](https://img.shields.io/badge/OpenCode-v2-000000)](https://opencode.ai)
 [![OpenSpec](https://img.shields.io/badge/OpenSpec-SDD-4B5563)](https://github.com/Fission-AI/OpenSpec)
 
-Skill para agentes de código que convierte ideas, requisitos y auditorías en
-**especificaciones OpenSpec, planes TDD y cambios verificables**, sin saltarse
-las puertas de aprobación humanas.
+**From an idea to an approved OpenSpec contract, test-first tasks and verifiable software changes.**
 
-Diseñada para OpenCode v2 y OpenSpec; portable a otros agentes compatibles con
-la especificación de skills.
+**De idea a proyecto** es una skill para agentes de programación con IA que convierte ideas o repositorios existentes en requisitos verificables, especificaciones **OpenSpec**, planificación **Spec-Driven Development (SDD)** y tareas **Test-Driven Development (TDD)**. Introduce aprobaciones humanas y trazabilidad para evitar cambios de alcance o implementaciones prematuras.
 
-## El problema que resuelve
+**English:** An AI coding agent skill for requirements engineering, OpenSpec-driven project planning, TDD implementation and evidence-based verification. Built for **OpenCode v2** (Plan/Build) and portable to other compatible agents. Approval gates are process rules, not a security sandbox.
 
-Los agentes tienden a pasar de una idea a código en el mismo turno: inventan
-requisitos, mezclan supuestos con decisiones, amplían el alcance y declaran
-«hecho» lo que nunca se verificó. Esta skill impone un contrato de proceso:
+**Instalación rápida / Quick install:** `npx skills add ajmelian/de-idea-a-proyecto`
 
-- **Modos explícitos** de autorización: explorar, documentar, implementar,
-  verificar y cerrar.
-- **Puertas de aprobación** (D0, D1/DoR, D2/DoS, D3/DoD) antes de escribir
-  documentos o código.
-- **Trazabilidad** entre requisitos, escenarios, tareas, pruebas, controles y
-  evidencias.
-- **TDD** rojo-verde-refactor y verificación honesta: `SUPERADO`, `FALLIDO`,
-  `NO EJECUTADO` o `NO APLICA`, nunca una victoria inventada.
-- **Seguridad y calidad** como requisitos funcionales, no como un paso final.
+[Ver en skills.sh](https://skills.sh/ajmelian/de-idea-a-proyecto) · [Ejemplos de uso / Examples](references/prompt-examples.md) · [Guía de instalación / Install guide](INSTALL.md)
+
+## Casos de uso / Use cases
+
+- **De una idea a OpenSpec / Idea to specification:** descubrir necesidades, delimitar el MVP y generar requisitos y escenarios aceptables antes de escribir código.
+- **Auditoría / Repository audit:** revisar un proyecto existente, detectar contradicciones y proponer correcciones sin modificar archivos en modo `EXPLORAR`.
+- **Planificación / SDD planning:** descomponer cambios OpenSpec aprobados en tareas atómicas con criterios DoR/DoS y trazabilidad requisito → prueba → evidencia.
+- **Implementación y verificación / TDD delivery:** aplicar rojo-verde-refactor únicamente con autorización, ejecutar controles de calidad y seguridad y registrar resultados reales.
+
+La skill aporta un **proceso repetible**, no garantiza ausencia de errores ni sustituye las pruebas, la revisión humana o los permisos del agente.
 
 ## Instalación
 
@@ -78,6 +74,22 @@ Abre una sesión nueva de OpenCode e invoca la skill:
 @de-idea-a-proyecto
 Audita este repositorio en modo EXPLORAR. No modifiques archivos.
 ```
+
+## El problema que resuelve
+
+Los agentes tienden a pasar de una idea a código en el mismo turno: inventan
+requisitos, mezclan supuestos con decisiones, amplían el alcance y declaran
+«hecho» lo que nunca se verificó. Esta skill impone un contrato de proceso:
+
+- **Modos explícitos** de autorización: explorar, documentar, implementar,
+  verificar y cerrar.
+- **Puertas de aprobación** (D0, D1/DoR, D2/DoS, D3/DoD) antes de escribir
+  documentos o código.
+- **Trazabilidad** entre requisitos, escenarios, tareas, pruebas, controles y
+  evidencias.
+- **TDD** rojo-verde-refactor y verificación honesta: `SUPERADO`, `FALLIDO`,
+  `NO EJECUTADO` o `NO APLICA`, nunca una victoria inventada.
+- **Seguridad y calidad** como requisitos funcionales, no como un paso final.
 
 ## Uso
 
