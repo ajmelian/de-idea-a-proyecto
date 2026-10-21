@@ -3,8 +3,8 @@
   "notGrouped": "bottom",
   "groupings": [
     {
-      "title": "Planificación y entrega",
-      "description": "Especificaciones OpenSpec, planes TDD y verificación con puertas de aprobación y trazabilidad de evidencias.",
+      "title": "OpenSpec · SDD · TDD",
+      "description": "From idea to verifiable software: OpenSpec, Spec-Driven Development (SDD), Test-Driven Development (TDD), requirements traceability, security checks and human approval gates. De la idea al proyecto con OpenCode v2 y otros agentes de IA.",
       "skills": [
         "de-idea-a-proyecto"
       ]
