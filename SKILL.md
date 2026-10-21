@@ -1,14 +1,18 @@
 ---
 name: de-idea-a-proyecto
-description: Convertir ideas, requisitos o proyectos de software en especificaciones OpenSpec y planes de implementación trazables en OpenCode v2. Usar al iniciar proyectos, transformar necesidades en requisitos, diseñar APIs, crear o revisar cambios OpenSpec, auditar documentación, planificar tareas TDD, implementar cambios autorizados y verificar calidad, seguridad y evidencias en PHP o Java. Distinguir planificación de solo lectura, escritura documental y desarrollo; no generar código desde ideas sin especificaciones aprobadas.
+description: "Transforms software ideas, requirements and existing repositories into reviewable OpenSpec specifications, traceable Spec-Driven Development (SDD) plans and Test-Driven Development (TDD) tasks. Use for project discovery, requirements engineering, API design, OpenSpec change proposals, documentation audits, test-first implementation, quality and security verification, and release readiness with OpenCode v2 or compatible agents. En español: convierte ideas en proyectos OpenSpec, define escenarios verificables, planifica TDD y audita evidencias. Require explicit human approval before editing documentation or code."
 license: MIT
 ---
 
 # De idea a proyecto: OpenCode + OpenSpec + SDD/TDD
 
-Convierte ideas, requisitos y auditorías en **especificaciones OpenSpec, planes
-TDD y cambios verificables**, con puertas de aprobación humanas y trazabilidad
-de requisitos a evidencias.
+Convierte ideas, requisitos y repositorios existentes en **especificaciones OpenSpec,
+planes SDD/TDD y cambios verificables**, con trazabilidad de requisitos a evidencias
+y aprobaciones humanas antes de pasar de documentación a código.
+
+**English:** Turn software ideas and existing codebases into reviewable OpenSpec
+contracts, test-first implementation tasks and reproducible verification. Separate
+read-only discovery, documentation, coding and closing with explicit human gates.
 
 - **Cuándo usar:** iniciar un proyecto, transformar una necesidad en requisitos,
   crear o revisar un cambio OpenSpec, planificar tareas TDD, auditar
