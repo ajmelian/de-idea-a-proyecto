@@ -102,6 +102,66 @@ then
   failures=$((failures + 1))
 fi
 
+printf '%s\n' '--- skills.sh customization ---'
+if [ -f skills.sh.json ]; then
+  if ! python3 - "$repo_root" <<'PY'
+import json
+import os
+import sys
+
+root = sys.argv[1]
+path = os.path.join(root, "skills.sh.json")
+errors = []
+
+try:
+    with open(path, encoding="utf-8") as handle:
+        data = json.load(handle)
+except (OSError, json.JSONDecodeError) as exc:
+    print(f"FAIL: invalid skills.sh.json: {exc}", file=sys.stderr)
+    sys.exit(1)
+
+if not isinstance(data, dict):
+    errors.append("skills.sh.json must contain a JSON object")
+else:
+    not_grouped = data.get("notGrouped")
+    if not_grouped is not None and not_grouped not in ("top", "bottom"):
+        errors.append("'notGrouped' must be 'top' or 'bottom'")
+
+    groupings = data.get("groupings")
+    if not isinstance(groupings, list) or not groupings:
+        errors.append("'groupings' must be a non-empty array")
+    else:
+        for index, group in enumerate(groupings[:50]):
+            label = f"groupings[{index}]"
+            if not isinstance(group, dict):
+                errors.append(f"{label} must be an object")
+                continue
+            title = group.get("title")
+            if not isinstance(title, str) or not title.strip():
+                errors.append(f"{label}.title must be a non-empty string")
+            description = group.get("description")
+            if description is not None and not isinstance(description, str):
+                errors.append(f"{label}.description must be a string")
+            skills = group.get("skills")
+            if not isinstance(skills, list) or not skills:
+                errors.append(f"{label}.skills must be a non-empty array")
+            elif not all(isinstance(skill, str) and skill.strip() for skill in skills):
+                errors.append(f"{label}.skills must contain non-empty strings")
+
+if errors:
+    for error in errors:
+        print(f"FAIL: {error}", file=sys.stderr)
+    sys.exit(1)
+
+print(f"ok: skills.sh.json with {len(groupings)} grouping(s)")
+PY
+  then
+    failures=$((failures + 1))
+  fi
+else
+  printf '%s\n' 'skip: skills.sh.json not present'
+fi
+
 printf '%s\n' '--- Relative links ---'
 if ! python3 - "$repo_root" <<'PY'
 import os
@@ -154,8 +214,15 @@ done
 
 printf '%s\n' '--- Forbidden artifacts ---'
 for path in logs .env node_modules; do
-  if [ -e "$path" ]; then fail "must not be published: $path"; fi
+  if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    if [ -n "$(git ls-files -- "$path")" ]; then
+      fail "tracked artifact must not be published: $path"
+    fi
+  elif [ -e "$path" ]; then
+    fail "must not be published: $path"
+  fi
 done
+ok "no forbidden artifacts tracked"
 
 if command -v grep >/dev/null 2>&1; then
   if grep -rInE --exclude-dir=.git --exclude=validate.sh \

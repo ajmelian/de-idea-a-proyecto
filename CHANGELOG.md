@@ -4,6 +4,16 @@ Todos los cambios relevantes de este proyecto se documentan aquí. El formato
 sigue [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/) y el
 versionado [SemVer](https://semver.org/lang/es/).
 
+## [Unreleased]
+
+### Añadido
+
+- Introducción legible en `SKILL.md` con propósito, cuándo usar la skill,
+  instalación y enlaces de documentación.
+- `skills.sh.json` para mostrar una sección descriptiva en la página del
+  repositorio en skills.sh.
+- Validación de `skills.sh.json` en `scripts/validate.sh` y en CI.
+
 ## [1.0.0] - 2026-10-20
 
 ### Añadido

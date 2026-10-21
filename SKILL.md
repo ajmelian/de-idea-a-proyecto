@@ -6,6 +6,19 @@ license: MIT
 
 # De idea a proyecto: OpenCode + OpenSpec + SDD/TDD
 
+Convierte ideas, requisitos y auditorías en **especificaciones OpenSpec, planes
+TDD y cambios verificables**, con puertas de aprobación humanas y trazabilidad
+de requisitos a evidencias.
+
+- **Cuándo usar:** iniciar un proyecto, transformar una necesidad en requisitos,
+  crear o revisar un cambio OpenSpec, planificar tareas TDD, auditar
+  documentación o verificar un incremento antes de cerrarlo.
+- **Cuándo no usar:** tareas triviales que no requieren especificación ni
+  trazabilidad, o cuando no hay acceso al repositorio y a sus especificaciones.
+- **Instalación:** `npx skills add ajmelian/de-idea-a-proyecto`
+- **Documentación:** [README](README.md) · [Instalación](INSTALL.md) ·
+  [Ejemplos de uso](references/prompt-examples.md)
+
 ## Contrato innegociable
 
 1. Tratar requisitos aprobados y OpenSpec versionado como contrato de desarrollo. No sustituir una decisión humana por una inferencia del agente.

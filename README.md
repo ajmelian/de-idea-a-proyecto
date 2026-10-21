@@ -121,6 +121,7 @@ CERRAR → commit / archivo solo con permiso específico
 ```text
 de-idea-a-proyecto/
 ├── SKILL.md                     # Contrato de la skill y flujo con puertas
+├── skills.sh.json               # Agrupación y descripción en skills.sh
 ├── INSTALL.md                   # Instalación, actualización y diagnóstico
 ├── references/
 │   ├── workflow.md              # Fases, CLI OpenSpec y comandos /opsx

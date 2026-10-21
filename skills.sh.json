@@ -1,0 +1,13 @@
+{
+  "$schema": "https://skills.sh/schemas/skills.sh.schema.json",
+  "notGrouped": "bottom",
+  "groupings": [
+    {
+      "title": "Planificación y entrega",
+      "description": "Especificaciones OpenSpec, planes TDD y verificación con puertas de aprobación y trazabilidad de evidencias.",
+      "skills": [
+        "de-idea-a-proyecto"
+      ]
+    }
+  ]
+}
